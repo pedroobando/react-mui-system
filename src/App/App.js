@@ -9,9 +9,7 @@ import {
 import "./App.css";
 import SideMenu from "../components/SideMenu";
 import Header from "../components/Header";
-import PageHeader from "../components/PageHeader";
-
-import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
+import Employes from "../pages/Employes/Employes";
 
 const theme = createMuiTheme({
   palette: {
@@ -56,11 +54,8 @@ export const App = () => {
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        <PageHeader
-          title="Page header"
-          subTitle="Page Descriptions"
-          icon={<PeopleAltOutlinedIcon fontSize="large" />}
-        />
+
+        <Employes />
       </div>
       <CssBaseline />
     </ThemeProvider>
