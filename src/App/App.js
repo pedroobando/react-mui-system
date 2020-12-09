@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 
 import "./App.css";
 import SideMenu from "../components/SideMenu";
+import Header from "../components/Header";
 
 const useStyles = makeStyles({
   appMain: {
@@ -16,7 +17,11 @@ export const App = () => {
   return (
     <React.Fragment>
       <SideMenu />
-      <div className={classes.appMain}>here we go.!</div>
+
+      <div className={classes.appMain}>
+        <Header />
+        here we go.!
+      </div>
     </React.Fragment>
   );
 };
