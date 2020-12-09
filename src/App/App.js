@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { CssBaseline, makeStyles } from "@material-ui/core";
 
 import "./App.css";
 import SideMenu from "../components/SideMenu";
@@ -7,22 +7,22 @@ import Header from "../components/Header";
 
 const useStyles = makeStyles({
   appMain: {
-    marginLeft: "320px",
+    paddingLeft: "320px",
     width: "100%",
   },
 });
 
 export const App = () => {
   const classes = useStyles();
-  return (
-    <React.Fragment>
-      <SideMenu />
 
+  return (
+    <>
+      <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        here we go.!
       </div>
-    </React.Fragment>
+      <CssBaseline />
+    </>
   );
 };
 
