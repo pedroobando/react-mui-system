@@ -4,7 +4,7 @@ import PageHeader from "../../components/PageHeader";
 import EmployeForm from "./EmployeForm";
 
 import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   pageContent: {
@@ -38,7 +38,9 @@ const Employes = () => {
         subTitle="Form design with validation"
         icon={<PeopleAltOutlinedIcon fontSize="large" />}
       />
-      <EmployeForm />
+      <Paper>
+        <EmployeForm addOrEdit={() => console.log("Submit")} />
+      </Paper>
     </React.Fragment>
   );
 };
