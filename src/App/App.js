@@ -20,6 +20,7 @@ export const App = () => {
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
+        <p>Content is here ..!</p>
       </div>
       <CssBaseline />
     </>
