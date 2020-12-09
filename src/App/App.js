@@ -1,9 +1,45 @@
 import React from "react";
-import { CssBaseline, makeStyles } from "@material-ui/core";
+import {
+  CssBaseline,
+  makeStyles,
+  ThemeProvider,
+  createMuiTheme,
+} from "@material-ui/core";
 
 import "./App.css";
 import SideMenu from "../components/SideMenu";
 import Header from "../components/Header";
+import PageHeader from "../components/PageHeader";
+
+import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#333996",
+      light: "#3c44b126",
+    },
+    secondary: {
+      main: "#f83145",
+      light: "#f8324526",
+    },
+    background: {
+      default: "#f4f5fd",
+    },
+  },
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: "translateZ(0)",
+      },
+    },
+  },
+  props: {
+    MuiIconButton: {
+      disableRipple: true,
+    },
+  },
+});
 
 const useStyles = makeStyles({
   appMain: {
@@ -16,14 +52,18 @@ export const App = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        <p>Content is here ..!</p>
+        <PageHeader
+          title="Page header"
+          subTitle="Page Descriptions"
+          icon={<PeopleAltOutlinedIcon fontSize="large" />}
+        />
       </div>
       <CssBaseline />
-    </>
+    </ThemeProvider>
   );
 };
 
