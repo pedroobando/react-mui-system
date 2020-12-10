@@ -8,8 +8,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Notification = (props) => {
-  const { notify, setNotify } = props;
+const Notification = ({ notify, setNotify }) => {
   const classes = useStyles();
 
   const handleClose = (event, reason) => {
