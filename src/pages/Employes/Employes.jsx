@@ -15,14 +15,15 @@ import {
 import useTable from "../../components/useTable";
 import * as employeeService from "../../services/employeeService";
 import Controls from "../../components/controls/Controls";
-import { Search } from "@material-ui/icons";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
-// import { AddIcon } from "@material-ui/icons";
-// import Popup from "../../components/Popup";
+
+import Notification from "../../components/Notification";
+import ConfirmDialog from "../../components/ConfirmDialog";
+
+import SearchIcon from "@material-ui/icons/Search";
+import AddIcon from "@material-ui/icons/Add";
+import Popup from "../../components/Popup";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import CloseIcon from "@material-ui/icons/Close";
-// import Notification from "../../components/Notification";
-// import ConfirmDialog from "../../components/ConfirmDialog";
 
 const useStyles = makeStyles((theme) => ({
   pageContent: {
@@ -120,7 +121,6 @@ const Employes = () => {
         icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
-        <EmployeeForm recordForEdit={recordForEdit} addOrEdit={addOrEdit} />
         <Toolbar>
           <Controls.Input
             label="Search Employees"
@@ -128,7 +128,7 @@ const Employes = () => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <Search />
+                  <SearchIcon />
                 </InputAdornment>
               ),
             }}
@@ -137,7 +137,7 @@ const Employes = () => {
           <Controls.Button
             text="Add New"
             variant="outlined"
-            startIcon={<AddCircleIcon />}
+            startIcon={<AddIcon />}
             className={classes.newButton}
             onClick={() => {
               setOpenPopup(true);
@@ -185,11 +185,11 @@ const Employes = () => {
         </TblContainer>
         <TblPagination />
       </Paper>
-      {/* <Popup title="Employee Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
+      <Popup title="Employee Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
         <EmployeeForm recordForEdit={recordForEdit} addOrEdit={addOrEdit} />
       </Popup>
       <Notification notify={notify} setNotify={setNotify} />
-      <ConfirmDialog confirmDialog={confirmDialog} setConfirmDialog={setConfirmDialog} /> */}
+      <ConfirmDialog confirmDialog={confirmDialog} setConfirmDialog={setConfirmDialog} />
     </>
   );
 };

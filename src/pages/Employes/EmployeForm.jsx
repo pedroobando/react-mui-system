@@ -50,8 +50,7 @@ const EmployeForm = ({ addOrEdit, recordForEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      employeeService.insertEmployee(values);
-      resetForm();
+      addOrEdit(values, resetForm);
     }
   };
 
