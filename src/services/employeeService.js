@@ -50,4 +50,10 @@ const getAllEmployees = () => {
   }));
 };
 
-export { insertEmployee, updateEmployee, deleteEmployee, generateEmployeeId };
+export {
+  insertEmployee,
+  updateEmployee,
+  deleteEmployee,
+  generateEmployeeId,
+  getAllEmployees,
+};
