@@ -38,7 +38,7 @@ const Employes = () => {
         subTitle="Form design with validation"
         icon={<PeopleAltOutlinedIcon fontSize="large" />}
       />
-      <Paper>
+      <Paper className={classes.pageContent}>
         <EmployeForm addOrEdit={() => console.log("Submit")} />
       </Paper>
     </React.Fragment>
