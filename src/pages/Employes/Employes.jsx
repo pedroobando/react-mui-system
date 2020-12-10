@@ -19,8 +19,8 @@ import { Search } from "@material-ui/icons";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 // import { AddIcon } from "@material-ui/icons";
 // import Popup from "../../components/Popup";
-// import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
-// import CloseIcon from "@material-ui/icons/Close";
+import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
+import CloseIcon from "@material-ui/icons/Close";
 // import Notification from "../../components/Notification";
 // import ConfirmDialog from "../../components/ConfirmDialog";
 
@@ -120,6 +120,7 @@ const Employes = () => {
         icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
+        <EmployeeForm recordForEdit={recordForEdit} addOrEdit={addOrEdit} />
         <Toolbar>
           <Controls.Input
             label="Search Employees"
@@ -160,7 +161,7 @@ const Employes = () => {
                       openInPopup(item);
                     }}
                   >
-                    {/* <EditOutlinedIcon fontSize="small" /> */}
+                    <EditOutlinedIcon fontSize="small" />
                   </Controls.ActionButton>
                   <Controls.ActionButton
                     color="secondary"
@@ -175,7 +176,7 @@ const Employes = () => {
                       });
                     }}
                   >
-                    {/* <CloseIcon fontSize="small" /> */}
+                    <CloseIcon fontSize="small" />
                   </Controls.ActionButton>
                 </TableCell>
               </TableRow>
